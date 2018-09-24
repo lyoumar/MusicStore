@@ -4,7 +4,9 @@
 # https://docs.microsoft.com/vsts/pipelines/apps/aspnet/build-aspnet-4
 
 pool:
-  vmImage: 'VS2017-Win2016'
+  #vmImage: 'VS2017-Win2016'
+  vmImage: 'MyLocalAgent'
+
 
 variables:
   solution: '**/*.sln'
@@ -25,7 +27,8 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+<# - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+#>
